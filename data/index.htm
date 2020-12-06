@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>CoderDojo Linz | Wetterstation</title>
+<style>
+/* Globale Schriftart setzen (weniger "schnörkelig") */
+body {
+  font-family: sans-serif;
+}
+    
+/* Format für Benutzernamen bei der Ausgabe einer Chat-Nachricht */
+.measurement {
+  font-weight: bold;
+  margin-right: 5px;
+}
+</style>
+</head>
+<body>
+<!-- Login-Seite -->
+<div class="sensorpage">
+<h3 class="title">Messungen</h3>
+<div class="temperature">
+    <span class="text">Temperatur: </span><span class="measurement" id="tempfield"></span>
+</div>
+<div class="hygro">
+    <span class="text">Luftfeuchte: </span><span class="measurement" id="hygfield"></span>
+</div>
+</div>
+
+
+<!-- Programmcode auf der Client-Seite -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/main-socketio.js"></script>
+</body>
+</html>
