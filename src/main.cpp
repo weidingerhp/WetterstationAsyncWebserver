@@ -11,9 +11,9 @@
 #include <FS.h>
 #endif
 
-// Replace with your network credentials
-char* ssid           = "YOUR_SSID";
-const char* password = "YOUR_WLAN_PASSWORD";
+// Ersetzen Sie durch Ihre Netzwerkanmeldeinformationen
+char* ssid           = "DEINE_SSID";
+const char* password = "DEIN_WLAN_PASSWORD";
 
 AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");
@@ -24,7 +24,7 @@ float currentHyg;
 unsigned long old_millis = 0;
 #define DELAY_MILLIS 5000
 
-// forward declarations
+// Variablen einstellen
 bool setupWiFi();
 void setupWebSockets();
 void setupWebServer();
@@ -33,18 +33,18 @@ void sendMeasurementJson(AsyncWebSocketClient *client);
 bool timeIsUp();
 
 // =============================================================================================
-//   Arduino setup and loop function
+//   Arduino Setup- und Loop-Funktion
 // =============================================================================================
 void setup() {
   Serial.begin(115200);
-  Serial.println(F("Starting ESP-Webserver"));
+  Serial.println(F("Startet den ESP-Webserver"));
   SPIFFS.begin();
 
   setupWiFi();
   setupWebSockets();
   setupWebServer();
 
-  Serial.printf("Setup complete ...\n");
+  Serial.printf("Setup fertig ...\n");
 }
 
 void loop() {
@@ -55,11 +55,11 @@ void loop() {
 }
 
 // =============================================================================================
-//   Setup the parts of our program
+//   Richtet Sie die Teile unseres Programms ein
 // =============================================================================================
 bool setupWiFi() {
   // Connect to Wi-Fi network with SSID and password
-  Serial.print("Connecting to ");
+  Serial.print("Verbinden mit ");
   Serial.println(ssid);
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
@@ -68,8 +68,8 @@ bool setupWiFi() {
   }
   // Print local IP address and start web server
   Serial.println("");
-  Serial.println("WiFi connected.");
-  Serial.println("IP address: ");
+  Serial.println("WiFi verbunden.");
+  Serial.println("IP Adresse: ");
   Serial.println(WiFi.localIP());
 }
 
@@ -93,8 +93,8 @@ void setupWebServer() {
     // Serial.printf("Arg - Path: %s\n", request->pathArg(0).c_str());
 
     request->send(200, "application/json", "{\n" 
-                                            "  \"temperature\": \"23\",\n" 
-                                            "  \"humidity\": \"58\"\n" 
+                                            "  \"Temperatur\": \"23\",\n" 
+                                            "  \"Luftfeuchtikeit\": \"58\"\n" 
                                             "}\n");
   });
 
@@ -104,7 +104,7 @@ void setupWebServer() {
 }
 
 // =============================================================================================
-//   Helper Functions
+//   Hilfsfunktionen
 // =============================================================================================
 bool timeIsUp() {
   if (millis() > old_millis + DELAY_MILLIS) {

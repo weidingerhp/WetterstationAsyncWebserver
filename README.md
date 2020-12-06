@@ -11,3 +11,12 @@ Der Code is in 4 teile aufgeteilt
 1. *Vorletzter Teil:* Hilfsfunktionen wie z.B. das JSON-Dokument für die Messungen zusammenbauen
 1. *Letzter Teil:* Die aktuelle Messung
 
+### Wie bekomme ich das auf den ESP8266 rauf?
+
+* im VS-Code eine `PlattformIO Core CLI` aufmachen und dort das Kommando `pio run -t uploadfs` eintippen.
+* Code bauen und Upload durchführen
+
+Danach kann man auf die IP des ESP8266 zugreifen und seine Messwerte im Browser anzeigen lassen.
+
+
+
