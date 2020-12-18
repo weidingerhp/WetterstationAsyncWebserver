@@ -31,6 +31,7 @@ void setupWebServer();
 void newMeasurement();
 void sendMeasurementJson(AsyncWebSocketClient *client);
 bool timeIsUp();
+void showOnDisplay();
 
 // =============================================================================================
 //   Arduino setup and loop function
@@ -137,4 +138,8 @@ void newMeasurement() {
   // put in only example values
   currentTemp = 21.4;
   currentHyg = 56;
+}
+
+void showOnDisplay() {
+  
 }
