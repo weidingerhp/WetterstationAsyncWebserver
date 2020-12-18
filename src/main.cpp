@@ -131,7 +131,7 @@ void sendMeasurementJson(AsyncWebSocketClient *client) {
 }
 
 // =============================================================================================
-//   Create the actual Measurement (don't forget to init the sensor in setup)
+//   Erstellt Sie die eigentliche Messung (vergiss Sie nicht, den Sensor im Setup zu starten)
 // =============================================================================================
 void newMeasurement() {
   // put in only example values
